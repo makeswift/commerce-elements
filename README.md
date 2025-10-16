@@ -36,7 +36,7 @@ export default {
   presets: [commerceElements],
   content: [
     './src/**/*.{js,ts,jsx,tsx}',
-    './node_modules/commerce-elements/src/**/*.{js,ts,jsx,tsx}', // Add this line
+    './node_modules/commerce-elements/dist/**/*.{js,mjs}', // Add this line
   ],
   // ... your other config
 };

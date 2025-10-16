@@ -1,3 +1,6 @@
+# Source files (we ship dist/ instead)
+src/
+
 # Development files
 .storybook/
 docs/
