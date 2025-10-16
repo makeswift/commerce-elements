@@ -44,22 +44,22 @@ export default {
 
 ### 2. Import Base Styles
 
-Import the CSS variables in your main CSS file **after** your Tailwind directives:
+Import the CSS variables in your JavaScript/TypeScript (recommended):
+
+```tsx
+// app/layout.tsx (Next.js) or main.tsx (Vite/React)
+import 'commerce-elements/styles';
+```
+
+Or if importing in CSS, it must come **before** the Tailwind directives:
 
 ```css
 /* app.css or globals.css */
+@import 'commerce-elements/styles';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-@import 'commerce-elements/styles';
-```
-
-Or import directly in your JavaScript/TypeScript:
-
-```tsx
-// main.tsx or App.tsx
-import 'commerce-elements/styles';
 ```
 
 ### 3. Use Components
@@ -102,17 +102,15 @@ And many more custom utilities for typography, animations, and effects.
 
 ## Customization
 
-Override CSS variables to customize the design system. You can do this in two ways:
-
-**Option 1: Override after import**
+Override CSS variables to customize the design system:
 
 ```css
-/* app.css */
+/* app/globals.css */
+@import 'commerce-elements/styles';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-@import 'commerce-elements/styles';
 
 :root {
   --primary: 220 100% 50%; /* HSL: hue saturation lightness */
@@ -122,10 +120,15 @@ Override CSS variables to customize the design system. You can do this in two wa
 }
 ```
 
-**Option 2: Define before import** (your values take precedence)
+**Recommended:** Import styles in JavaScript and override variables in CSS:
+
+```tsx
+// app/layout.tsx
+import 'commerce-elements/styles';
+```
 
 ```css
-/* app.css */
+/* app/globals.css */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -134,8 +137,6 @@ Override CSS variables to customize the design system. You can do this in two wa
   --primary: 220 100% 50%;
   /* ... your custom values */
 }
-
-@import 'commerce-elements/styles';
 ```
 
 ## Documentation

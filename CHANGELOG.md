@@ -1,5 +1,12 @@
 # commerce-elements
 
+## 0.1.2
+
+### Patch Changes
+
+- Fixed module resolution for Next.js by adding explicit .tsx file extensions to imports
+- Updated README with correct CSS import order (must come before @tailwind directives)
+
 ## 0.1.1
 
 ### Patch Changes
