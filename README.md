@@ -44,10 +44,14 @@ export default {
 
 ### 2. Import Base Styles
 
-Import the base CSS variables in your main CSS file or app entry:
+Import the CSS variables in your main CSS file **after** your Tailwind directives:
 
 ```css
 /* app.css or globals.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 @import 'commerce-elements/styles';
 ```
 
@@ -98,10 +102,16 @@ And many more custom utilities for typography, animations, and effects.
 
 ## Customization
 
-Override CSS variables in your own CSS to customize the design system:
+Override CSS variables to customize the design system. You can do this in two ways:
+
+**Option 1: Override after import**
 
 ```css
-/* my-theme.css */
+/* app.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 @import 'commerce-elements/styles';
 
 :root {
@@ -110,6 +120,22 @@ Override CSS variables in your own CSS to customize the design system:
   --background: 0 0% 100%;
   /* ... override any variables */
 }
+```
+
+**Option 2: Define before import** (your values take precedence)
+
+```css
+/* app.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: 220 100% 50%;
+  /* ... your custom values */
+}
+
+@import 'commerce-elements/styles';
 ```
 
 ## Documentation

@@ -11,7 +11,7 @@
       "import": "./src/index.ts",
       "types": "./src/index.ts"
     },
-    "./styles": "./src/globals.css",
+    "./styles": "./src/styles.css",
     "./tailwind": "./tailwind.preset.js"
   },
   "files": [
