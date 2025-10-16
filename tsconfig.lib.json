@@ -1,0 +1,20 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "declaration": true,
+    "declarationMap": true,
+    "emitDeclarationOnly": true,
+    "outDir": "./dist"
+  },
+  "include": ["src"],
+  "exclude": [
+    "src/**/*.stories.ts",
+    "src/**/*.stories.tsx",
+    "src/**/*.test.ts",
+    "src/**/*.test.tsx",
+    "**/*.spec.ts",
+    "**/*.spec.tsx",
+    "node_modules",
+    "dist"
+  ]
+}
